@@ -1,0 +1,17 @@
+[package]
+name = "{{ crate_name }}"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Replace this with bevy = "0.13" when compiling a release build.
+bevy = { version = "0.13", features = ["dynamic_linking"] }
+
+# Debug only.
+bevy-inspector-egui = "*"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
